@@ -290,7 +290,7 @@ if __name__ == '__main__':
   parser.add_argument('--use_cora_defaults', action='store_true',
                       help='Whether to run with best params for cora. Overrides the choice of dataset')
   # data args
-  parser.add_argument('--dataset', type=str, default='Citeseer',
+  parser.add_argument('--dataset', type=str, default='texas',
                       help='Cora, Citeseer, Pubmed, Computers, Photo, CoauthorCS, ogbn-arxiv')
   parser.add_argument('--data_norm', type=str, default='rw',
                       help='rw for random walk, gcn for symmetric gcn norm')
