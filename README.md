@@ -33,12 +33,13 @@ The main message passing function is:
 
 $$ \frac{\partial}{\partial t}\mathbf{x}_i(t) = \alpha \odot \sum\limits_{j\in \mathcal{N}_i}(a(\mathbf{x}_i(t),\mathbf{x}_j(t))-\beta)(\mathbf{x}_j(t)-\mathbf{x}_i(t))+ \delta \odot \mathbf{x}_i(t)\odot(1-\mathbf{x}_i(t)\odot\mathbf{x}_i(t)).$$
 
-Hyperparameter $\beta$ is a signal of the repulsive force, meaning that when $a_{ij} - \beta$ is negative, the two nodes repel one another. As shown in the following figure, $\beta$ exhibits completely different performances on datasets with two different levels of homophily. There is a notebook in src folder, which show more experiment detail how we can control the particle system to overcome the oversommthing problem and heterophilic dataset problem.
+Hyperparameter $\beta$ is a signal of the repulsive force, meaning that when $a_{ij} - \beta$ is negative, the two nodes repel one another. As shown in the following figure, $\beta$ exhibits completely different performances on datasets with two different levels of homophily. 
 
 <div align="center">
     <img src="beta_study.png" alt="beta" width="50%">
 </div>
 
+There is a notebook in src folder, which show more experiment detail how we can control the particle system to overcome the oversommthing problem and heterophilic dataset problem.
 
 ## Comments 
 
