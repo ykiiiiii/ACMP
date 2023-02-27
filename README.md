@@ -21,17 +21,41 @@ or
 conda env create -f environment.yml
 ```
 
+### Experiments
+For example to run for Cora with random splits:
+```
+cd src
+python run_GNN.py --dataset Cora 
+```
+
+### Usage
+The main message passing function is:
+
+$$ \frac{\partial}{\partial t}\mathbf{x}_i(t) = \alpha \odot \sum\limits_{j\in \mathcal{N}_i}(a(\mathbf{x}_i(t),\mathbf{x}_j(t))-\beta)(\mathbf{x}_j(t)-\mathbf{x}_i(t))+ \delta \odot \mathbf{x}_i(t)\odot(1-\mathbf{x}_i(t)\odot\mathbf{x}_i(t)).$$
+
+Hyperparameter $\beta$ is a signal of the repulsive force, meaning that when $a_{ij} - \beta$ is negative, the two nodes repel one another. As shown in the following figure, $\beta$ exhibits completely different performances on datasets with two different levels of homophily. There is a notebook in src folder, which show more experiment detail how we can control the particle system to overcome the oversommthing problem and heterophilic dataset problem.
+
+<div align="center">
+    <img src="beta_study.png" alt="beta" width="50%">
+</div>
+
+
+## Comments 
+
+- Our codebase for the graph diffusion models builds heavily on [Graph neural PDE](https://github.com/twitter-research/graph-neural-pde).
+Thanks for open-sourcing!
+
 
 
 ## Citation 
 If you consider our codes and datasets useful, please cite:
 ```
 @inproceedings{
-wang2023acmp,
-title={{ACMP}: Allen-Cahn Message Passing with Attractive and Repulsive Forces for Graph Neural Networks},
-author={Yuelin Wang and Kai Yi and Xinliang Liu and Yu Guang Wang and Shi Jin},
-booktitle={The Eleventh International Conference on Learning Representations },
-year={2023},
-url={https://openreview.net/forum?id=4fZc_79Lrqs}
+ wang2023acmp,
+ title={{ACMP}: Allen-Cahn Message Passing with Attractive and Repulsive Forces for Graph Neural Networks},
+ author={Yuelin Wang and Kai Yi and Xinliang Liu and Yu Guang Wang and Shi Jin},
+ booktitle={The Eleventh International Conference on Learning Representations },
+ year={2023},
+ url={https://openreview.net/forum?id=4fZc_79Lrqs}
 }
 ```
