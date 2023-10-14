@@ -31,7 +31,7 @@ python run_GNN.py --dataset Cora
 ### Usage
 The main message passing function is:
 
-$$ \frac{\partial}{\partial t}\mathbf{x}_i(t) = \alpha \odot \sum\limits_{j\in \mathcal{N}_i}(a(\mathbf{x}_i(t),\mathbf{x}_j(t))-\beta)(\mathbf{x}_j(t)-\mathbf{x}_i(t))+ \delta \odot \mathbf{x}_i(t)\odot(1-\mathbf{x}_i(t)\odot\mathbf{x}_i(t)).$$
+$$\frac{\partial}{\partial t}\mathbf{x}_i(t) = \alpha \odot \sum\limits _{j\in \mathcal{N}_i}(a(\mathbf{x}_i(t),\mathbf{x}_j(t))-\beta)(\mathbf{x}_j(t)-\mathbf{x}_i(t))+ \delta \odot \mathbf{x}_i(t)\odot(1-\mathbf{x}_i(t)\odot\mathbf{x}_i(t)).$$
 
 Hyperparameter $\beta$ is a signal of the repulsive force, meaning that when $a_{ij} - \beta$ is negative, the two nodes repel one another. As shown in the following figure, $\beta$ exhibits completely different performances on datasets with two different levels of homophily. 
 
