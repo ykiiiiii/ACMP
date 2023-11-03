@@ -49,7 +49,7 @@ Thanks for open-sourcing!
 
 
 ## Citation 
-If you consider our codes and datasets useful, please cite:
+If you consider our codes useful, please cite:
 ```
 @inproceedings{
  wang2023acmp,
